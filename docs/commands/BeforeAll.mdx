@@ -43,8 +43,7 @@ other Context or Describe blcoks at the same level.
 
 ```powershell
 BeforeAll {
-    .
-$PSCommandPath.Replace('.Tests.ps1','.ps1')
+    . $PSCommandPath.Replace('.Tests.ps1','.ps1')
 }
 
 Describe "API validation" {
@@ -66,7 +65,7 @@ Describe "API validation" {
         $response = Get-Pokemon -Name Pikachu
     }
 
-    It "response has Name = 'Pikachu'" {
+It "response has Name = 'Pikachu'" {
         $response.Name | Should -Be 'Pikachu'
     }
 
@@ -112,6 +111,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [https://pester.dev/docs/commands/BeforeAll](https://pester.dev/docs/commands/BeforeAll)
 
 [https://pester.dev/docs/usage/setup-and-teardown](https://pester.dev/docs/usage/setup-and-teardown)
+
+[about_BeforeEach_AfterEach]()
 
 ## EDIT THIS PAGE
 
